@@ -1,0 +1,182 @@
+:root {
+  --bg: #0D0D0D;
+  --text: #FAFAFA;
+  --accent-1: #A471F7;
+  --accent-2: #F5C56F;
+  --muted: #888888;
+  --font-main: 'Space Grotesk', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Header (menú superior) */
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 15;
+  background: var(--bg);
+  pointer-events: none; /* temporal hasta que se mueva el logo */
+}
+
+/* Contenedor del título/subtítulo animado */
+#intro-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  text-align: center;
+  transition: all 1.5s ease;
+  z-index: 40; /* Asegura que esté sobre el loading-screen */
+  pointer-events: none;
+}
+
+#intro-content.to-header {
+  top: 0;
+  left: -90px;
+  transform: translate(0, 0) scale(0.5);
+  text-align: left;
+  pointer-events: auto;
+}
+
+#intro-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--accent-1);
+  transition: font-size 1s ease;
+}
+
+#intro-content h2 {
+  font-size: 1.2rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Botones de navegación */
+#nav-buttons {
+  display: flex;
+  gap: 1rem;
+  pointer-events: auto;
+}
+
+#nav-buttons button {
+  background: none;
+  color: var(--text);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#nav-buttons button:hover {
+  color: var(--accent-2);
+}
+
+/* Main */
+#main {
+  display: block;
+  padding: 8rem 2rem 4rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grilla de trabajos */
+#grid-works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.work-item {
+  background-color: rgb(74, 50, 73);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.work-item:hover {
+  transform: scale(1.02);
+}
+
+/* Modales */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13,13,13,0.95);
+  z-index: 30;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.modal.small {
+  width: 100%;
+  height: auto;
+  top: 20%;
+  bottom: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.modal-content {
+  max-width: 800px;
+  color: var(--text);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0D0D0D;
+  z-index: 30;
+  opacity: 1;
+  transition: opacity 0.75s ease;
+  pointer-events: all;
+}
+
+#loading-screen.hide {
+  opacity: 0;
+  pointer-events: none;
+}

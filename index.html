@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalina Scaramuzza | Artista Multimedial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="loading-screen"></div>
+  <div id="textura-bg"></div>
+  <!-- Pantalla de carga / Intro -->
+  <div id="intro">
+    <div id="intro-content">
+      <h1>Catalina Scaramuzza</h1>
+      <h2 id="subtitle">Artista multimedial</h2>
+    </div>
+  </div>
+
+  <!-- Menú fijo -->
+<header id="menu">
+  <div id="logo-dest"></div>
+  <div id="nav-buttons">
+    <button id="about-btn">Sobre mí</button>
+    <button id="contact-btn">Contacto</button>
+  </div>
+</header>
+
+
+  <!-- Contenido principal -->
+  <main id="main">
+    <section id="grid-works">
+      <!-- Proyecto 1: video embebido -->
+      <div class="work-item">
+        <iframe
+          padding-top="0"
+          width="100%"
+          height="70%"
+          src="https://www.youtube.com/embed/EwlJuI0_phc?autoplay=1&mute=1&controls=1&loop=1&playlist=EwlJuI0_phc"
+          title="YouTube video"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="aspect-ratio: 1/1; object-fit: cover;"
+        ></iframe>
+      </div>
+      <div class="work-item">Proyecto 2</div>
+      <div class="work-item">Proyecto 3</div>
+      <!-- Podés seguir agregando -->
+    </section>
+  </main>
+
+  <!-- Ventana Sobre mí -->
+  <div id="about-modal" class="modal">
+    <button class="close-btn">✕</button>
+    <div class="modal-content">
+      <h2>Sobre mí</h2>
+      <p>Tu texto sobre vos...</p>
+    </div>
+  </div>
+
+  <!-- Ventana Contacto -->
+  <div id="contact-modal" class="modal small">
+    <button class="close-btn">✕</button>
+    <div class="modal-content">
+      <h2>Contacto</h2>
+      <p>Email: catalinascaramuzza17@gmail</p>
+      <p>Instagram / Behance / otro</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.cells.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
