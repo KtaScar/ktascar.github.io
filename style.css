@@ -1,9 +1,9 @@
 :root {
-  --bg: #0D0D0D;
+  --bg: #50254e;
   --text: #FAFAFA;
-  --accent-1: #A471F7;
-  --accent-2: #F5C56F;
-  --muted: #888888;
+  --accent-1: #d9e4ac;
+  --accent-2: #cbf56f;
+  --muted: #95ab70;
   --font-main: 'Space Grotesk', sans-serif;
 }
 
@@ -102,24 +102,56 @@ body, html {
 /* Grilla de trabajos */
 #grid-works {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas por fila */
   gap: 2rem;
 }
 
 .work-item {
-  background-color: rgb(74, 50, 73);
+  background-color: #000000;
   aspect-ratio: 1 / 1;
   display: flex;
-  justify-content: center;
-  align-items: top;
+  flex-direction: column;
+  align-items: stretch;
   color: var(--text);
   font-size: 1.2rem;
   transition: transform 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.work-item iframe {
+width: 100%;
+height: 70%;
+flex-shrink: 0;
+border: none;
+display: block;
+object-fit: cover;
 }
 
 .work-item:hover {
   transform: scale(1.02);
+}
+
+.work-description {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  #grid-works {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #grid-works {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Modales */

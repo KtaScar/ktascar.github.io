@@ -38,17 +38,3 @@ document.querySelectorAll(".close-btn").forEach((btn) => {
 window.addEventListener('contextmenu', function(e) {
   e.preventDefault();
 });
-
-VANTA.CELLS({
-  el: "#main",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  color1: 0x27384c,
-  color2: 0x1b0c31,
-  size: 1.30,
-  speed: 5,
-  scale: 1.00
-})
